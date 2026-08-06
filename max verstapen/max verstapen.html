@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Max Verstappen</title>
+
+    <style>
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: Arial, sans-serif;
+ color: white;
+ text-align: center;
+ background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)),
+ url("Max Verstappen - Qatar 2023.jpg");
+ background-size: cover;
+ background-position: center;
+ background-attachment: fixed;
+ padding-top: 70px;
+ }
+
+ 
+ nav {
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ background-color: #2b00ff;
+ padding: 15px;
+ z-index: 1000;
+ }
+
+ nav ul {
+ list-style: none;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ gap: 30px;
+ }
+
+ nav ul li a {
+ color: white;
+ text-decoration: none;
+ font-weight: bold;
+ }
+
+ nav ul li a:hover {
+ color: yellow;
+ }
+
+ .cta-btn {
+ display: inline-block;
+ margin-top: 15px;
+ padding: 10px 20px;
+ background: black;
+ color: white;
+ text-decoration: none;
+ border-radius: 6px;
+ }
+
+ .cta-btn:hover {
+ background: white;
+ color: black;
+ }
+
+ section {
+ padding: 50px 20px;
+ }
+
+ img {
+ width: 350px;
+ max-width: 100%;
+ border-radius: 10px;
+ margin: 20px 0;
+ }
+
+ h1 {
+ margin-bottom: 20px;
+ }
+
+ p {
+ line-height: 1.8;
+ font-size: 18px;
+ }
+
+ @media(max-width:768px) {
+
+ nav ul {
+ flex-direction: column;
+ gap: 15px;
+ }
+
+ img {
+ width: 90%;
+ }
+
+ p {
+ font-size: 16px;
+ color: #fefbfb;
+ font-family: Arial, sans-serif;
+ font-style: italic;
+ font-weight: bold;
+ font-size: medium;
+flex-direction: column;
+}
+ 
+ }
+ 
+
+    </style>
+</head>
+
+<body>
+
+ <nav>
+ <ul>
+ <li><a href="#home">Home</a></li>
+ <li><a href="#season2023">2023 Season</a></li>
+ <li><a href="#basic-info">Basic Info</a></li>
+ <li><a href="#achievements">Achievements</a></li>
+ </ul>
+
+ <a href="https://www.formula1.com/en/drivers/max-verstappen" class="cta-btn" target="_blank">
+ More Info
+ </a>
+ </nav>
+
+ <section id="home">
+ <h1>About Max Verstappen</h1>
+
+ <p>
+ Max Verstappen is a Dutch racing driver who competes in Formula One for Red Bull Racing.
+ </p>
+ </section>
+
+ <section id="basic-info">
+
+ <h1>Max Verstappen</h1>
+
+ <img src="Max Verstappen (1).jpg" alt="Max Verstappen">
+
+ <p>
+ Max Verstappen, the Red Bull driver and a four-time Formula One World Champion, won his
+ first Formula One World Championship in 2021 and has since established himself as one of
+ the most talented drivers in the sport.
+
+ He was born on September 30, 1997, in Belgium and is the son of former Formula One driver
+ Jos Verstappen.
+
+ Max made his Formula One debut in 2015 with Scuderia Toro Rosso (now Racing Bulls) and
+ quickly gained attention for his impressive performances on the track.
+ </p>
+
+ </section>
+
+ <section id="season2023">
+
+ <h1>2023 Season</h1>
+
+ <img src="Max Verstappen (2).jpg" alt="Max Verstappen">
+
+ <p>
+ In the 2023 Formula One season, Max Verstappen continued to showcase his exceptional
+ driving skills and determination.
+
+ He secured 19 victories from 22 races and achieved a record-breaking streak of
+ 10 consecutive wins, proving that he is one of the greatest Formula One drivers
+ of all time.
+ </p>
+
+ </section>
+
+ <section id="achievements">
+
+ <h1>Max Verstappen's Achievements</h1>
+
+ <img src="max verstappen, austrian gp 2026.jpg" alt="Max Verstappen">
+
+ <p>
+ • Youngest Formula One Grand Prix winner(in the 2016 spanish grand prix).<br><br>
+
+ • Four-time Formula One World Champion(2021, 2022, 2023, 2024).<br><br>
+
+ • Record for most wins in a single season(19 wins).<br><br>
+
+ • Record for most consecutive wins in one season (10 wins).<br><br>
+
+ • First Dutch Formula One World Champion(2021).<br><br>
+
+ • The Fastest lap in Formula One history (in the 2025 Italian Grand Prix).<br><br>
+
+ </p>
+
+ </section>
+
+ <section>
+
+ <h2>
+ Max Verstappen is one of the greatest drivers in Formula One history and a true legend of
+ the sport.
+ </h2>
+
+ </section>
+
+</body>
+<script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('nav ul li a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                window.scrollTo({
+                    top: targetSection.offsetTop - 70, // Adjust for fixed nav height
+                    behavior: 'smooth'
+                });
+            }
+        });
+});
+  const statNumbers = document.querySelectorAll('.stat-number');
+
+    statNumbers.forEach(counter => {
+      const target = +counter.getAttribute('data-target');
+      const increment = target / 50; 
+
+      const updateCount = () => {
+        const count = +counter.innerText;
+        if (count < target) {
+          counter.innerText = Math.ceil(count + increment);
+          setTimeout(updateCount, 30);
+        } else {
+          counter.innerText = target;
+        }
+      };
+
+      updateCount();
+    });
+
+    
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+      img.addEventListener('click', () => {
+        alert("You clicked on " + img.alt + "!");
+      });
+    });
+
+</script>
+</html>
